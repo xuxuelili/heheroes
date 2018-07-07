@@ -48,8 +48,8 @@
         },
         methods: {
             loadData () {
-                axios
-                    .get('http://localhost:3000/heroes')
+                this.$http
+                    .get('/heroes')
                     .then((res) => {
                         // console.log(res)
                         const { status, data } = res
@@ -64,8 +64,8 @@
                 if (!confirm('你确定删除吗?')) {
                     return;
                 }
-                axios
-                    .delete(`http://localhost:3000/heroes/${id}`)
+                this.$http
+                    .delete(`/heroes/${id}`)
                     .then((res) => {
                         const { status, data } = res
 
